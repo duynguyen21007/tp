@@ -13,7 +13,7 @@
 
 ## **Acknowledgements**
 
-* _{List the sources of reused or adapted ideas, code, documentation, and third-party libraries here, with links to the originals.}_
+* This project evolves [AddressBook Level 3](https://github.com/se-edu/addressbook-level3). The architecture, implementation examples, and initial manual tests below are adapted from its Developer Guide. They describe the inherited codebase until the corresponding Laplace features replace them.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -24,6 +24,8 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Design**
+
+This section documents the inherited AddressBook Level 3 implementation, which is still the basis of the current code. The Laplace requirements in the appendix describe the intended product; diagrams and component descriptions here must be updated as that implementation changes.
 
 ### Architecture
 
@@ -157,7 +159,7 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 ## **Implementation**
 
-This section describes some noteworthy details on how certain features are implemented.
+This section retains proposed work from the inherited AddressBook Level 3 guide. Its `Person` and `AddressBook` examples do not describe implemented Laplace member, equipment, or loan behavior.
 
 ### \[Proposed\] Undo/redo feature
 
@@ -246,11 +248,9 @@ The following activity diagram summarizes what happens when a user executes a ne
     * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
     * Cons: We must ensure that the implementation of each individual command is correct.
 
-_{more aspects and alternatives to be added}_
-
 ### \[Proposed\] Data archiving
 
-_{Explain here how the data archiving feature will be implemented}_
+Laplace would retain an archived member's record and closed loans while excluding that member from normal active lists. Archiving must reject members with open loans. The storage format would need an archive state, and member lookup would need to distinguish active from archived records. This is a proposal; the inherited AddressBook Level 3 model has no member archive state.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -285,14 +285,14 @@ Laplace is a local, single-user desktop application for a CCA EXCO member to man
 These requirements consolidate the [team's project notes](https://docs.google.com/document/d/1XzYR2IpGc__mSZEy5GKMmVK8809j3Ln42VA8_9-va48/edit?usp=sharing): Week 4 (direction), Week 5 (all 41 user stories), and Week 6 (MVP and feature specifications). They describe intended behavior, including requirements beyond the MVP; they do not claim that every feature is implemented. Where the earlier schema differs from the later Feature Specifications, the latter defines the MVP baseline.
 
 * **MVP baseline:** Add, list, view, and delete members and equipment; identify members by NUS ID and equipment by a generated UUID; issue and return individual items; show holdings and holders; validate input and preserve consistency on failure.
-* **Broader requirements:** Editing, archiving, recovery, import/export, search and filtering, summaries, batch operations, condition recording at handover, histories, and undo/redo remain documented below even if they are not delivered this semester.
+* **Broader requirements:** Editing, archiving, recovery, import/export, search and filtering, summaries, batch operations, condition recording at handover, histories, duplicate warnings, and undo/redo remain documented below even if they are not delivered this semester. Batch addition and per-type summaries require an equipment type field shared by physical units; the MVP equipment schema does not contain that field.
 * **Deletion and retention:** The MVP permanently deletes an eligible record and its closed loans. The proposed 30-day recovery and historical lookup requirements need a revised retention policy before implementation: recoverable records and their linked loans must be retained for recovery, and archived members must retain their history. The MVP deletion behavior does not satisfy these future requirements.
 * **Single-user boundary:** Import/export supports the same user's local records and backups. The earlier idea of handing a snapshot to another EXCO member is retained as a considered use of export, but is excluded from the course product's regular operations. Shared datasets, concurrent users, and member self-service are outside scope.
 
 ### User stories
 
 Priorities: High (must have) — `* * *`; Medium (nice to have) — `* *`; Low (lower-priority candidate) — `*`.
-Priority expresses product importance, not implementation status. **MVP** denotes the Week 6 baseline; **Future** denotes a requirement outside that baseline, without a delivery commitment. US01–US41 retain the numbering of the Week 5 stories; US42–US45 make supporting requirements explicit.
+Priority expresses product importance, not implementation status. **MVP** denotes the Week 6 baseline; **Future** denotes a requirement outside that baseline, without a delivery commitment. US01–US41 retain the numbering of the Week 5 stories; US42–US45 make supporting requirements explicit. US46 preserves the broader apparent-duplicate warning in the original US13; the MVP only rejects identical NUS IDs.
 
 | ID | Priority | Scope | As a … | I want to … | So that I can … |
 |----|----------|-------|--------|-------------|----------------|
@@ -341,6 +341,7 @@ Priority expresses product importance, not implementation status. **MVP** denote
 | US43 | `* * *` | MVP | CCA EXCO member | retrieve a member by their exact NUS ID | distinguish members even when they share a name. |
 | US44 | `* * *` | MVP | CCA EXCO member | retrieve equipment by its exact UUID | distinguish physical units even when their descriptions match. |
 | US45 | `* * *` | MVP | CCA EXCO member | have successful changes saved locally and loaded on the next launch | continue managing records across sessions without re-entering them. |
+| US46 | `* *` | Future | CCA EXCO member adding data | be warned when a new member appears to duplicate an existing member despite having a different NUS ID | review a possible duplicate without wrongly blocking people who share a name or contact detail. |
 
 ### Use cases
 
@@ -369,7 +370,7 @@ Use case ends.
     * 2b1. Laplace rejects the duplicate and identifies the existing member.
     * Use case resumes at step 1.
 
-Names, phone numbers, or email addresses shared by different NUS IDs do not by themselves constitute duplicates.
+Names, phone numbers, or email addresses shared by different NUS IDs do not by themselves constitute duplicates. For the future US46 warning, a matching normalized name together with a matching phone number or email address is a possible duplicate to review, but it does not block registration.
 
 #### UC02: Register an equipment item
 
@@ -535,7 +536,7 @@ Use case ends.
 
 #### UC08: Undo a mistaken change
 
-**Scope:** Future. **Related stories:** US37, US38, US41.
+**Scope:** Future. **Related stories:** US37, US41.
 
 **MSS**
 
@@ -550,14 +551,128 @@ Use case ends.
 * 2a. There is no action available to undo.
     * 2a1. Laplace explains that no undo is available and leaves the data unchanged.
     * Use case ends.
-* 3a. The EXCO member decides the undo was a mistake and requests redo before any new data-changing action.
-    * 3a1. Laplace reapplies and saves the undone action and shows the resulting records.
-    * Use case ends.
-* 3b. The EXCO member requests redo after a new successful data-changing action has invalidated it.
-    * 3b1. Laplace explains that no redo is available and leaves the current data unchanged.
+The future retention policy must support restoring any deleted records covered by undo.
+
+#### UC09: View a member's current holdings
+
+**Scope:** MVP. **Related stories:** US06, US27, US43.
+
+**MSS**
+
+1. The EXCO member requests a member's details using their NUS ID.
+2. Laplace finds the member and shows their details and all equipment linked by open loans, including each item's UUID and expected return date.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. The NUS ID is invalid or no active member has that ID.
+    * 2a1. Laplace explains the problem without showing another member's holdings.
+    * Use case resumes at step 1.
+* 2b. The member has no open loans.
+    * 2b1. Laplace shows the member's details and states that they hold no equipment.
     * Use case ends.
 
-A new successful data-changing action after undo invalidates redo. Read-only actions and failed commands do not add undo entries or invalidate redo. The future retention policy must support restoring any deleted records covered by undo.
+#### UC10: View an equipment item's current holder
+
+**Scope:** MVP. **Related stories:** US17, US28, US44.
+
+**MSS**
+
+1. The EXCO member requests an item's details using its UUID.
+2. Laplace finds the item and shows its details, current holder's identity and contact details, and the open loan's dates.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. The UUID is invalid or no active item has that UUID.
+    * 2a1. Laplace explains the problem without showing another item's details.
+    * Use case resumes at step 1.
+* 2b. The item has no open loan.
+    * 2b1. Laplace shows the item's details and states that it has no current holder.
+    * Use case ends.
+
+#### UC11: Export a complete backup
+
+**Scope:** Future. **Related stories:** US03, US41.
+
+**MSS**
+
+1. The EXCO member requests a complete snapshot at a local destination.
+2. Laplace creates one snapshot containing the member, equipment, and loan records and their relationships.
+3. Laplace reports where the complete snapshot was saved.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. The destination cannot be written or the snapshot cannot be completed.
+    * 2a1. Laplace reports the failure and leaves no incomplete snapshot at the destination.
+    * Use case resumes at step 1.
+
+#### UC12: Archive an inactive member
+
+**Scope:** Future. **Related stories:** US08, US36, US41.
+
+**MSS**
+
+1. The EXCO member requests archiving of an active member using their NUS ID.
+2. Laplace verifies that the member has no open loans.
+3. Laplace saves the member as archived, retains their record and closed loans, and removes them from active member lists.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. The NUS ID is invalid or does not identify an active member.
+    * 2a1. Laplace explains the problem without changing records.
+    * Use case resumes at step 1.
+* 2b. The member has one or more open loans.
+    * 2b1. Laplace identifies the outstanding equipment and refuses to archive the member.
+    * Use case ends. The EXCO member may record the returns in UC04 before trying again.
+
+#### UC13: Recover a deleted record
+
+**Scope:** Future. **Related stories:** US10, US20, US41.
+**Precondition:** The future retention policy keeps recoverable deleted records and their linked loans for 30 days.
+
+**MSS**
+
+1. The EXCO member requests recovery of a deleted member or equipment item using its NUS ID or UUID.
+2. Laplace finds the deleted record, verifies that it is still within the recovery period, and checks its linked records.
+3. Laplace restores and saves the record and its retained loans without creating broken references or an extra open loan.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. The identifier is invalid, the record is not retained, or the 30-day recovery period has elapsed.
+    * 2a1. Laplace explains why recovery is unavailable.
+    * Use case ends without changing records.
+* 2b. Restoring the record would conflict with an active identifier or a linked record cannot be restored consistently.
+    * 2b1. Laplace reports the conflict and leaves current records unchanged.
+    * Use case ends without recovery.
+
+#### UC14: Redo an undone change
+
+**Scope:** Future. **Related stories:** US38, US41.
+**Precondition:** A successful data-changing action has been undone.
+
+**MSS**
+
+1. The EXCO member requests redo of the most recently undone action.
+2. Laplace reapplies and saves the action, including its linked records, and identifies the redone action.
+
+Use case ends.
+
+**Extensions**
+
+* 2a. No action is available to redo, including when a new successful data-changing action has invalidated redo.
+    * 2a1. Laplace explains that redo is unavailable and leaves current records unchanged.
+    * Use case ends.
+
+A new successful data-changing action after undo invalidates redo. Read-only actions and failed commands do not add undo entries or invalidate redo.
 
 ### Non-Functional Requirements
 
@@ -585,7 +700,7 @@ These are acceptance targets for the intended product, not measurements of the c
 | Equipment item / unit | One individually tracked physical object. Identical models are separate items, each with its own identifier. |
 | UUID | Universally unique identifier. Laplace generates one immutable UUID for each equipment item; names and descriptions are not equipment identifiers. |
 | Category | A broad grouping recorded on an equipment item, such as cameras or sports equipment. One category can contain different equipment types. |
-| Equipment type | A particular kind or model of equipment, such as a Canon EOS R50 camera. Several physical units can share a type; the future batch and summary stories refer to these units, rather than every item in a broad category. |
+| Equipment type | A particular kind or model of equipment, such as a Canon EOS R50 camera. Future batch addition and per-type summaries require an explicit type field with the same normalized value on units of that type. The MVP records name and category but has no separate type field. |
 | Condition | The recorded physical state of an item: `GOOD`, `FAIR`, `DAMAGED`, or `UNDER_REPAIR` in the MVP. |
 | Availability | A derived state: `ASSIGNED` when an open loan exists; otherwise `AVAILABLE` for `GOOD` or `FAIR` condition, and `UNAVAILABLE` for `DAMAGED` or `UNDER_REPAIR`. It is not entered independently. |
 | Equipment loan / assignment | A relationship between one member and one equipment item, with assignment, expected return, and optional actual return dates. A member may have several loans; an item has at most one open loan. |
@@ -595,7 +710,6 @@ These are acceptance targets for the intended product, not measurements of the c
 | Assignment date | The date the item was issued; it must be a real calendar date no later than the computer's local date. |
 | Expected return date | The due date, on or after assignment. Reaching it does not automatically record a return. |
 | Actual return date | The recorded date of return, from the assignment date through the computer's local date, inclusive. |
-| Overdue loan | An open loan whose expected return date is before the computer's local date. This definition does not imply automatic notifications. |
 | Active record | A member or equipment record included in normal lists, rather than archived or deleted. Active equipment can still be assigned or unavailable. |
 | Archive | A proposed operation that removes an inactive member from the active list while preserving their record and history. |
 | Delete | In the MVP, permanent removal of a record and its closed loans, allowed only without open loans. Future 30-day recovery requires retaining deleted data instead. |
@@ -609,7 +723,7 @@ These are acceptance targets for the intended product, not measurements of the c
 
 ## **Appendix: Instructions for manual testing**
 
-Given below are instructions to test the app manually.
+The cases below test the inherited AddressBook Level 3 baseline. Replace them with Laplace member, equipment, and loan cases when those features are implemented; the requirements appendix above specifies their intended behavior.
 
 <box type="info" seamless>
 
@@ -633,8 +747,6 @@ testers are expected to do more *exploratory* testing.
     1. Relaunch the app by double-clicking the JAR file.<br>
        Expected: The most recent window size and location are retained.
 
-1. _{ more test cases … }_
-
 ### Deleting a person
 
 1. Deleting a person while all persons are being shown
@@ -650,12 +762,9 @@ testers are expected to do more *exploratory* testing.
     1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
-1. _{ more test cases … }_
-
 ### Saving data
 
-1. Dealing with missing/corrupted data files
+1. Saving after a successful command
 
-    1. _{Explain how to simulate missing or corrupted data files and state the expected behavior.}_
-
-1. _{ more test cases … }_
+    1. Add a person using the `add` command, then exit and relaunch the app.<br>
+       Expected: The added person is still present.
