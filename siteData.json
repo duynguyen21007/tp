@@ -1,0 +1,270 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "AboutUs.md",
+      "title": "About Us",
+      "headings": {
+        "about-us": "About Us",
+        "project-team": "Project team",
+        "keegan-gan": "Keegan Gan",
+        "keith-chia-wen-kai": "Keith Chia Wen Kai",
+        "arjo": "Arjo",
+        "nicholas-vun": "Nicholas Vun",
+        "choong-jen-ern-isaac": "Choong Jen Ern Isaac",
+        "nguyen-anh-duy": "Nguyen Anh Duy"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Configuration.md",
+      "title": "Configuration guide",
+      "headings": {
+        "configuration-guide": "Configuration guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DevOps.md",
+      "title": "DevOps guide",
+      "headings": {
+        "devops-guide": "DevOps guide",
+        "build-automation": "Build automation",
+        "continuous-integration-ci": "Continuous integration (CI)",
+        "code-coverage": "Code coverage",
+        "repository-wide-checks": "Repository-wide checks",
+        "making-a-release": "Making a release"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DeveloperGuide.md",
+      "title": "Developer Guide",
+      "headings": {
+        "laplace-developer-guide": "Laplace Developer Guide",
+        "acknowledgements": "Acknowledgements",
+        "setting-up-getting-started": "Setting up, getting started",
+        "design": "Design",
+        "architecture": "Architecture",
+        "ui-component": "UI component",
+        "logic-component": "Logic component",
+        "model-component": "Model component",
+        "storage-component": "Storage component",
+        "common-classes": "Common classes",
+        "implementation": "Implementation",
+        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "proposed-data-archiving": "[Proposed] Data archiving",
+        "documentation-logging-testing-dev-ops": "Documentation, logging, testing, dev-ops",
+        "appendix-requirements": "Appendix: Requirements",
+        "product-scope": "Product scope",
+        "user-stories": "User stories",
+        "use-cases": "Use cases",
+        "non-functional-requirements": "Non-Functional Requirements",
+        "glossary": "Glossary",
+        "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "launch-and-shutdown": "Launch and shutdown",
+        "deleting-a-person": "Deleting a person",
+        "saving-data": "Saving data"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Documentation.md",
+      "title": "Documentation guide",
+      "headings": {
+        "documentation-guide": "Documentation Guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "GuiCommandContract.md",
+      "headings": {
+        "laplace-gui-and-command-integration-contract": "Laplace GUI and command integration contract",
+        "status-and-delivery": "Status and delivery",
+        "display-and-read-only-interfaces": "Display and read-only interfaces",
+        "view-feature-handoff-components-implemented-integration-pending": "View-feature handoff (components implemented; integration pending)",
+        "gui-reference-and-required-behavior": "GUI reference and required behavior",
+        "shared-display-contract-owned-by-nicholas": "Shared display contract owned by Nicholas",
+        "shared-parsing-and-sorting-contracts-owned-by-duy": "Shared parsing and sorting contracts owned by Duy",
+        "gui-component-contracts-and-ownership": "GUI component contracts and ownership",
+        "ownership-of-shared-files": "Ownership of shared files"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Logging.md",
+      "title": "Logging guide",
+      "headings": {
+        "logging-guide": "Logging guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "ScaffoldContract.md",
+      "headings": {
+        "laplace-shared-scaffold-contract": "Laplace shared scaffold contract",
+        "domain-rules": "Domain rules",
+        "collection-contracts": "Collection contracts",
+        "root-model-contracts": "Root model contracts",
+        "json-contracts": "JSON contracts",
+        "parser-contracts": "Parser contracts",
+        "ownership-and-handoff": "Ownership and handoff",
+        "completion-milestones": "Completion milestones"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "SettingUp.md",
+      "title": "Setting up and getting started",
+      "headings": {
+        "setting-up-and-getting-started": "Setting up and getting started",
+        "setting-up-the-project-on-your-computer": "Setting up the project on your computer",
+        "before-writing-code": "Before writing code"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Testing.md",
+      "title": "Testing guide",
+      "headings": {
+        "testing-guide": "Testing guide",
+        "running-tests": "Running tests",
+        "types-of-tests": "Types of tests"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "UserGuide.md",
+      "title": "User Guide",
+      "headings": {
+        "ab-3-user-guide": "AB-3 User Guide",
+        "quick-start": "Quick start",
+        "features": "Features",
+        "viewing-help-help": "Viewing help: help",
+        "adding-a-person-add": "Adding a person: add",
+        "listing-all-persons-list": "Listing all persons: list",
+        "editing-a-person-edit": "Editing a person: edit",
+        "locating-persons-by-name-find": "Locating persons by name: find",
+        "deleting-a-person-delete": "Deleting a person: delete",
+        "clearing-all-entries-clear": "Clearing all entries: clear",
+        "exiting-the-program-exit": "Exiting the program: exit",
+        "saving-the-data": "Saving the data",
+        "editing-the-data-file": "Editing the data file",
+        "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
+        "faq": "FAQ",
+        "known-issues": "Known issues",
+        "command-summary": "Command summary"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/equipment-add.md",
+      "headings": {
+        "equipment-addition": "Equipment addition",
+        "integration-boundary": "Integration boundary"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/equipment-delete.md",
+      "headings": {
+        "delete-equipment": "Delete equipment",
+        "input-and-behavior": "Input and behavior",
+        "integration-handoff": "Integration handoff",
+        "verification": "Verification"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/equipment-list.md",
+      "headings": {
+        "equipment-list": "Equipment list"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/equipment-view.md",
+      "headings": {
+        "equipment-view": "Equipment view",
+        "integration-status": "Integration status"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/loans-add.md",
+      "headings": {
+        "assign-equipment-loans-add": "Assign equipment: loans add"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/loans-return.md",
+      "headings": {
+        "record-a-return-loans-return": "Record a return: loans return"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/member-add.md",
+      "headings": {
+        "add-a-member": "Add a member",
+        "component-handoff-and-integration-boundary": "Component handoff and integration boundary",
+        "validation-evidence": "Validation evidence"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/member-delete.md",
+      "headings": {
+        "delete-a-member": "Delete a member",
+        "input-and-behavior": "Input and behavior",
+        "integration-handoff": "Integration handoff",
+        "verification": "Verification"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/member-list.md",
+      "headings": {
+        "member-list": "Member list"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/member-view.md",
+      "headings": {
+        "member-view": "Member view",
+        "integration-status": "Integration status"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/Verification.md",
+      "headings": {
+        "laplace-gui-verification": "Laplace GUI verification",
+        "stage-a-foundation": "Stage A foundation",
+        "shared-component-apis": "Shared component APIs",
+        "foundation-evidence": "Foundation evidence",
+        "final-shell-gate-pending-dependencies": "Final shell gate (pending dependencies)",
+        "stage-b-deletion-handoff": "Stage B deletion handoff"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "index.md",
+      "title": "",
+      "headings": {
+        "addressbook-level-3": "AddressBook Level-3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/kimjunkuno.md",
+      "title": "Nicholas' Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}
