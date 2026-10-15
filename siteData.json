@@ -158,6 +158,16 @@
       "headingKeywords": {}
     },
     {
+      "src": "commands/README.md",
+      "headings": {
+        "laplace-command-routing-reference": "Laplace command routing reference",
+        "integration-status": "Integration status",
+        "loan-rules": "Loan rules",
+        "integration-verification": "Integration verification"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "commands/equipment-add.md",
       "headings": {
         "equipment-addition": "Equipment addition",
