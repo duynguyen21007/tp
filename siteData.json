@@ -249,13 +249,51 @@
       "headingKeywords": {}
     },
     {
+      "src": "gui/ReviewResponse.md",
+      "headings": {
+        "pr-93-completion-review-response": "PR #93 completion-review response",
+        "review-status-after-merged-routing": "Review status after merged routing",
+        "mvp-reconciliation": "MVP reconciliation",
+        "evidence": "Evidence"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/ShellVerification.md",
+      "headings": {
+        "laplace-shell-verification": "Laplace shell verification",
+        "behavior-and-ownership": "Behavior and ownership",
+        "real-routed-integration": "Real routed integration",
+        "tests-and-repeatable-checks": "Tests and repeatable checks",
+        "local-evidence": "Local evidence",
+        "members": "Members",
+        "equipment": "Equipment",
+        "real-details-actual-routed-view-commands": "Real details (actual routed view commands)",
+        "loans": "Loans",
+        "small-window": "Small window",
+        "error-recovery": "Error recovery",
+        "manual-acceptance-record": "Manual acceptance record"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/StandaloneAcceptance.md",
+      "headings": {
+        "standalone-acceptance-record-15-october-2026": "Standalone acceptance record - 15 October 2026",
+        "completed-final-build-observations": "Completed final-build observations",
+        "earlier-build-observations-and-fixes": "Earlier-build observations and fixes",
+        "remaining-final-build-acceptance": "Remaining final-build acceptance"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "gui/Verification.md",
       "headings": {
         "laplace-gui-verification": "Laplace GUI verification",
         "stage-a-foundation": "Stage A foundation",
         "shared-component-apis": "Shared component APIs",
         "foundation-evidence": "Foundation evidence",
-        "final-shell-gate-pending-dependencies": "Final shell gate (pending dependencies)",
+        "final-shell-gate-routed-tests-complete-interactive-and-ci-pending": "Final shell gate (routed tests complete; interactive and CI pending)",
         "stage-b-deletion-handoff": "Stage B deletion handoff"
       },
       "headingKeywords": {}
