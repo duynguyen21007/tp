@@ -109,7 +109,8 @@
         "json-contracts": "JSON contracts",
         "parser-contracts": "Parser contracts",
         "ownership-and-handoff": "Ownership and handoff",
-        "completion-milestones": "Completion milestones"
+        "completion-milestones": "Completion milestones",
+        "member-lifecycle-extension": "Member lifecycle extension"
       },
       "headingKeywords": {}
     },
@@ -149,7 +150,9 @@
         "add-a-member-member-add": "Add a member: member add",
         "list-members-member-list": "List members: member list",
         "view-a-member-and-their-equipment-member-view": "View a member and their equipment: member view",
+        "edit-a-member-member-edit": "Edit a member: member edit",
         "delete-a-member-member-delete": "Delete a member: member delete",
+        "restore-a-member-member-restore": "Restore a member: member restore",
         "add-equipment-equipment-add": "Add equipment: equipment add",
         "list-equipment-equipment-list": "List equipment: equipment list",
         "view-equipment-and-its-holder-equipment-view": "View equipment and its holder: equipment view",
@@ -247,10 +250,18 @@
     {
       "src": "commands/member-delete.md",
       "headings": {
-        "delete-a-member": "Delete a member",
+        "soft-delete-a-member": "Soft-delete a member",
         "input-and-behavior": "Input and behavior",
         "command-contract": "Command contract",
         "verification": "Verification"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/member-edit.md",
+      "headings": {
+        "edit-a-member": "Edit a member",
+        "integration-contract": "Integration contract"
       },
       "headingKeywords": {}
     },
@@ -262,10 +273,31 @@
       "headingKeywords": {}
     },
     {
+      "src": "commands/member-restore.md",
+      "headings": {
+        "restore-a-member": "Restore a member",
+        "model-and-persistence-contract": "Model and persistence contract",
+        "gui-and-feature-integration": "GUI and feature integration"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "commands/member-view.md",
       "headings": {
         "member-view": "Member view",
         "integration-status": "Integration status"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/search-and-planning.md",
+      "headings": {
+        "search-and-inventory-planning": "Search and inventory planning",
+        "members": "Members",
+        "equipment": "Equipment",
+        "input-refresh-and-navigation": "Input, refresh and navigation",
+        "inventory-groups-and-duplicates": "Inventory groups and duplicates",
+        "integration-contract": "Integration contract"
       },
       "headingKeywords": {}
     },
@@ -310,6 +342,37 @@
         "review-status-after-merged-routing": "Review status after merged routing",
         "mvp-reconciliation": "MVP reconciliation",
         "evidence": "Evidence"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/SearchPlanningLifecycle.md",
+      "headings": {
+        "search-planning-integration-with-member-lifecycle": "Search/planning integration with member lifecycle",
+        "conflict-resolution": "Conflict resolution",
+        "verification": "Verification"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/SearchPlanningReview.md",
+      "headings": {
+        "search-planning-review-follow-up": "Search/planning review follow-up",
+        "preserve-queries-after-deletion": "Preserve queries after deletion",
+        "retain-integrated-edit-and-search-routing": "Retain integrated edit and search routing",
+        "verification": "Verification",
+        "git-convention-audit": "Git convention audit"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/SearchPlanningVerification.md",
+      "headings": {
+        "week-10-search-and-inventory-planning-verification": "Week 10 search and inventory planning verification",
+        "implemented-behavior": "Implemented behavior",
+        "initial-feature-checks-on-windows-java-25-0-4": "Initial feature checks on Windows, Java 25.0.4",
+        "mounted-application-evidence": "Mounted application evidence",
+        "scope-and-later-shared-integration": "Scope and later shared integration"
       },
       "headingKeywords": {}
     },
