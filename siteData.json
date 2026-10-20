@@ -137,23 +137,40 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "ab-3-user-guide": "AB-3 User Guide",
+        "laplace-user-guide": "Laplace User Guide",
         "quick-start": "Quick start",
+        "sample-records-on-first-launch": "Sample records on first launch",
+        "using-the-window": "Using the window",
+        "command-format-and-feedback": "Command format and feedback",
+        "shared-field-rules": "Shared field rules",
+        "availability": "Availability",
+        "correcting-common-errors": "Correcting common errors",
         "features": "Features",
-        "viewing-help-help": "Viewing help: help",
-        "adding-a-person-add": "Adding a person: add",
-        "listing-all-persons-list": "Listing all persons: list",
-        "editing-a-person-edit": "Editing a person: edit",
-        "locating-persons-by-name-find": "Locating persons by name: find",
-        "deleting-a-person-delete": "Deleting a person: delete",
-        "clearing-all-entries-clear": "Clearing all entries: clear",
-        "exiting-the-program-exit": "Exiting the program: exit",
-        "saving-the-data": "Saving the data",
-        "editing-the-data-file": "Editing the data file",
-        "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
+        "add-a-member-member-add": "Add a member: member add",
+        "list-members-member-list": "List members: member list",
+        "view-a-member-and-their-equipment-member-view": "View a member and their equipment: member view",
+        "delete-a-member-member-delete": "Delete a member: member delete",
+        "add-equipment-equipment-add": "Add equipment: equipment add",
+        "list-equipment-equipment-list": "List equipment: equipment list",
+        "view-equipment-and-its-holder-equipment-view": "View equipment and its holder: equipment view",
+        "delete-equipment-equipment-delete": "Delete equipment: equipment delete",
+        "open-the-loans-tab-loans-list": "Open the Loans tab: loans list",
+        "assign-equipment-loans-add": "Assign equipment: loans add",
+        "return-equipment-loans-return": "Return equipment: loans return",
+        "a-complete-issue-and-return-workflow": "A complete issue-and-return workflow",
+        "saving-file-access-and-recovery": "Saving, file access and recovery",
         "faq": "FAQ",
-        "known-issues": "Known issues",
+        "mvp-limits": "MVP limits",
         "command-summary": "Command summary"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/MvpFields.md",
+      "headings": {
+        "mvp-fields-and-failure-behavior": "MVP fields and failure behavior",
+        "error-order": "Error order",
+        "persistence-and-presentation": "Persistence and presentation"
       },
       "headingKeywords": {}
     },
@@ -170,8 +187,7 @@
     {
       "src": "commands/equipment-add.md",
       "headings": {
-        "equipment-addition": "Equipment addition",
-        "integration-boundary": "Integration boundary"
+        "equipment-addition": "Equipment addition"
       },
       "headingKeywords": {}
     },
@@ -180,7 +196,7 @@
       "headings": {
         "delete-equipment": "Delete equipment",
         "input-and-behavior": "Input and behavior",
-        "integration-handoff": "Integration handoff",
+        "command-contract": "Command contract",
         "verification": "Verification"
       },
       "headingKeywords": {}
@@ -208,6 +224,13 @@
       "headingKeywords": {}
     },
     {
+      "src": "commands/loans-list.md",
+      "headings": {
+        "open-the-loans-tab": "Open the Loans tab"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "commands/loans-return.md",
       "headings": {
         "record-a-return-loans-return": "Record a return: loans return"
@@ -217,9 +240,7 @@
     {
       "src": "commands/member-add.md",
       "headings": {
-        "add-a-member": "Add a member",
-        "component-handoff-and-integration-boundary": "Component handoff and integration boundary",
-        "validation-evidence": "Validation evidence"
+        "add-a-member": "Add a member"
       },
       "headingKeywords": {}
     },
@@ -228,7 +249,7 @@
       "headings": {
         "delete-a-member": "Delete a member",
         "input-and-behavior": "Input and behavior",
-        "integration-handoff": "Integration handoff",
+        "command-contract": "Command contract",
         "verification": "Verification"
       },
       "headingKeywords": {}
@@ -245,6 +266,40 @@
       "headings": {
         "member-view": "Member view",
         "integration-status": "Integration status"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/MvpCompletion.md",
+      "headings": {
+        "v1-3-3-mvp-completion-and-acceptance": "v1.3.3 MVP completion and acceptance",
+        "revision-and-scope": "Revision and scope",
+        "implementation-and-regressions": "Implementation and regressions",
+        "automated-checks": "Automated checks",
+        "packaged-standalone-interaction": "Packaged standalone interaction",
+        "screenshots": "Screenshots",
+        "remaining-final-acceptance": "Remaining final acceptance"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/MvpCoverageFollowUp.md",
+      "headings": {
+        "pr-97-coverage-follow-up": "PR #97 coverage follow-up",
+        "added-coverage": "Added coverage",
+        "small-production-simplifications": "Small production simplifications",
+        "local-verification": "Local verification"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "gui/MvpReviewFollowUp.md",
+      "headings": {
+        "pr-97-review-follow-up": "PR #97 review follow-up",
+        "multiline-notes-through-the-full-input-path": "Multiline notes through the full input path",
+        "feedback-required-by-the-detailed-mvp-specification": "Feedback required by the detailed MVP specification",
+        "verification": "Verification",
+        "actual-standalone-review-build-interaction": "Actual standalone review-build interaction"
       },
       "headingKeywords": {}
     },
@@ -302,7 +357,7 @@
       "src": "index.md",
       "title": "",
       "headings": {
-        "addressbook-level-3": "AddressBook Level-3"
+        "laplace": "Laplace"
       },
       "headingKeywords": {}
     },
@@ -310,7 +365,7 @@
       "src": "team/kimjunkuno.md",
       "title": "Nicholas' Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-laplace": "Project: Laplace"
       },
       "headingKeywords": {}
     }
