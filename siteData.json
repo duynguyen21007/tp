@@ -46,13 +46,20 @@
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
         "architecture": "Architecture",
+        "contribution-diagram-index": "Contribution diagram index",
         "ui-component": "UI component",
+        "tab-completion": "Tab completion",
         "logic-component": "Logic component",
         "model-component": "Model component",
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "directory-search-and-inventory-planning": "Directory search and inventory planning",
+        "identity-based-deletion": "Identity-based deletion",
+        "domain-mutation-transactions": "Domain mutation transactions",
+        "adding-multiple-physical-equipment-units": "Adding multiple physical equipment units",
+        "equipment-editing-deletion-and-restoration": "Equipment editing, deletion and restoration",
+        "undo-redo-feature": "Undo/redo feature",
         "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-dev-ops": "Documentation, logging, testing, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
@@ -63,8 +70,13 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-person": "Deleting a person",
-        "saving-data": "Saving data"
+        "grouped-equipment-command-assistance-and-appearance": "Grouped equipment, command assistance and appearance",
+        "tab-completion-across-current-commands": "Tab completion across current commands",
+        "rejection-of-retired-commands": "Rejection of retired commands",
+        "adding-a-batch-of-equipment": "Adding a batch of equipment",
+        "editing-deleting-and-restoring-equipment": "Editing, deleting and restoring equipment",
+        "saving-data": "Saving data",
+        "undo-and-redo": "Undo and redo"
       },
       "headingKeywords": {}
     },
@@ -72,7 +84,8 @@
       "src": "Documentation.md",
       "title": "Documentation guide",
       "headings": {
-        "documentation-guide": "Documentation Guide"
+        "documentation-guide": "Documentation Guide",
+        "local-preview-and-diagram-rendering": "Local preview and diagram rendering"
       },
       "headingKeywords": {}
     },
@@ -87,7 +100,8 @@
         "shared-display-contract-owned-by-nicholas": "Shared display contract owned by Nicholas",
         "shared-parsing-and-sorting-contracts-owned-by-duy": "Shared parsing and sorting contracts owned by Duy",
         "gui-component-contracts-and-ownership": "GUI component contracts and ownership",
-        "ownership-of-shared-files": "Ownership of shared files"
+        "ownership-of-shared-files": "Ownership of shared files",
+        "equipment-maintenance-update": "Equipment maintenance update"
       },
       "headingKeywords": {}
     },
@@ -110,7 +124,8 @@
         "parser-contracts": "Parser contracts",
         "ownership-and-handoff": "Ownership and handoff",
         "completion-milestones": "Completion milestones",
-        "member-lifecycle-extension": "Member lifecycle extension"
+        "member-lifecycle-extension": "Member lifecycle extension",
+        "equipment-maintenance-update": "Equipment maintenance update"
       },
       "headingKeywords": {}
     },
@@ -130,6 +145,7 @@
       "headings": {
         "testing-guide": "Testing guide",
         "running-tests": "Running tests",
+        "autocomplete-checks": "Autocomplete checks",
         "types-of-tests": "Types of tests"
       },
       "headingKeywords": {}
@@ -140,9 +156,12 @@
       "headings": {
         "laplace-user-guide": "Laplace User Guide",
         "quick-start": "Quick start",
+        "completing-commands-and-fields-with-tab": "Completing commands and fields with Tab",
         "sample-records-on-first-launch": "Sample records on first launch",
         "using-the-window": "Using the window",
+        "appearance-mode-dark-and-mode-light": "Appearance: mode dark and mode light",
         "command-format-and-feedback": "Command format and feedback",
+        "unsupported-addressbook-commands": "Unsupported AddressBook commands",
         "shared-field-rules": "Shared field rules",
         "availability": "Availability",
         "correcting-common-errors": "Correcting common errors",
@@ -156,10 +175,14 @@
         "add-equipment-equipment-add": "Add equipment: equipment add",
         "list-equipment-equipment-list": "List equipment: equipment list",
         "view-equipment-and-its-holder-equipment-view": "View equipment and its holder: equipment view",
+        "edit-equipment-equipment-edit": "Edit equipment: equipment edit",
         "delete-equipment-equipment-delete": "Delete equipment: equipment delete",
+        "restore-equipment-equipment-restore": "Restore equipment: equipment restore",
         "open-the-loans-tab-loans-list": "Open the Loans tab: loans list",
         "assign-equipment-loans-add": "Assign equipment: loans add",
         "return-equipment-loans-return": "Return equipment: loans return",
+        "undo-a-record-change-undo": "Undo a record change: undo",
+        "redo-an-undone-change-redo": "Redo an undone change: redo",
         "a-complete-issue-and-return-workflow": "A complete issue-and-return workflow",
         "saving-file-access-and-recovery": "Saving, file access and recovery",
         "faq": "FAQ",
@@ -183,7 +206,8 @@
         "laplace-command-routing-reference": "Laplace command routing reference",
         "integration-status": "Integration status",
         "loan-rules": "Loan rules",
-        "integration-verification": "Integration verification"
+        "integration-verification": "Integration verification",
+        "undo-and-redo": "Undo and redo"
       },
       "headingKeywords": {}
     },
@@ -208,6 +232,13 @@
       "src": "commands/equipment-list.md",
       "headings": {
         "equipment-list": "Equipment list"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/equipment-maintenance.md",
+      "headings": {
+        "edit-and-restore-equipment": "Edit and restore equipment"
       },
       "headingKeywords": {}
     },
@@ -290,6 +321,13 @@
       "headingKeywords": {}
     },
     {
+      "src": "commands/redo.md",
+      "headings": {
+        "redo-an-undone-change": "Redo an undone change"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "commands/search-and-planning.md",
       "headings": {
         "search-and-inventory-planning": "Search and inventory planning",
@@ -298,6 +336,13 @@
         "input-refresh-and-navigation": "Input, refresh and navigation",
         "inventory-groups-and-duplicates": "Inventory groups and duplicates",
         "integration-contract": "Integration contract"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "commands/undo.md",
+      "headings": {
+        "undo-a-record-change": "Undo a record change"
       },
       "headingKeywords": {}
     },
